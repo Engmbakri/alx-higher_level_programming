@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-for ascii_code in range(96, 123):
+for i in range(ord("a"), ord("z") + 1):
     character = chr(ascii_code)
-    print(character, end="")
+    print("{:c}".format(i), end="")
