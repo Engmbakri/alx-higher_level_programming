@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-last = (abs(number) %10)
+last = abs(number) % 10
 if number < 0:
     last *= -1
-print("last digit of", end=" ")
+print("Last digit of", end=" ")
 if last > 5:
     print("{:d} is {:d} and is greater than 5".format(number, last))
 elif last == 0:
