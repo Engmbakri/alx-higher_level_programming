@@ -5,4 +5,4 @@ def max_integer(my_list=[]):
     else:
         my_list.sort()
         max_value = my_list[-1]
-        print("Max: {}".format(max_value))
+        print("Max: {:d}".format(max_value))
