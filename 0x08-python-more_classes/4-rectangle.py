@@ -1,11 +1,11 @@
-#!/usr/bin/python3
+#!/urs/bin/python3
 """
 defining Rectangle class
 """
 
 
 class Rectangle:
-    """ Representtive Rectangle"""
+    """Representative Rectangle"""
     def __init__(self, width=0, height=0):
         """Initialize Rectangle"""
         self.width = width  # Set width using the property setter
@@ -57,7 +57,7 @@ class Rectangle:
         rectangle = ""
         for _ in range(self._height):
             rectangle += "#" * self._width + "\n"
-        return rectangle[:-1]  # Remove the last newline character
+        return rectangle.rstrip()
 
     def __repr__(self):
         """Return a string representation that
