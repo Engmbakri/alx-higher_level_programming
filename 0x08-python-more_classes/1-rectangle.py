@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-define Rectanglr class
+define Rectangle class
 """
 
 
 class Rectangle:
+    """Representative of Rectangle"""
     def __init__(self, width=0, height=0):
-        self._width = 0  # Private attribute for width
-        self._height = 0  # Private attribute for height
+        """Initialize the Rectangle"""
         self.width = width  # Set width using the property setter
         self.height = height  # Set height using the property setter
 
