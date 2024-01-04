@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-defining a Rectangle class
+defining Rectangle class
 """
 
 
 class Rectangle:
-    """Representative of Rectangle"""
+    """ Representtive Rectangle"""
     def __init__(self, width=0, height=0):
-        """initialize Rectangle"""
+        """Initialize Rectangle"""
         self.width = width  # Set width using the property setter
         self.height = height  # Set height using the property setter
 
@@ -48,3 +48,18 @@ class Rectangle:
         if self._width == 0 or self._height == 0:
             return 0
         return 2 * (self._width + self._height)
+
+    def __str__(self):
+        """Return a string representation of the rectangle."""
+        if self._width == 0 or self._height == 0:
+            return ""
+
+        rectangle = ""
+        for _ in range(self._height):
+            rectangle += "#" * self._width + "\n"
+        return rectangle[:-1]  # Remove the last newline character
+
+    def __repr__(self):
+        """Return a string representation that
+        can be used to recreate the object."""
+        return f"Rectangle(width={self._width}, height={self._height})"
