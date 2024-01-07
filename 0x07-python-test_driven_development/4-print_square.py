@@ -1,81 +1,25 @@
-The ``4-print_square`` module
-============================
+#!/usr/bin/python3
+"""Module for print_square method."""
 
-Using ``print_square``
----------------------
 
-Import module:
-    >>> print_square = __import__('4-print_square').print_square
+def print_square(size):
+    """Method for printing a square with # characters.
 
-Test normal print 0:
-    >>> print_square(0)
+    Args:
+        size: The int size of the square's side.
 
-Test normal print 1:
-    >>> print_square(1)
-    #
+    Raises:
+        TypeError: If size is not an int.
+        ValueError: If size is < 0.
+    """
+    if not isinstance(size, int):
+        raise TypeError("size must be an integer")
 
-Test normal print 2:
-    >>> print_square(2)
-    ##
-    ##
+    if size < 0:
+        raise ValueError("size must be >= 0")
 
-Test normal print 3:
-    >>> print_square(3)
-    ###
-    ###
-    ###
+    print((("#" * size + "\n") * size), end="")
 
-Test normal print 10:
-    >>> print_square(10)
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-    ##########
-
-Test negative:
-    >>> print_square(-10)
-    Traceback (most recent call last):
-    ...
-    ValueError: size must be >= 0
-
-Test float:
-    >>> print_square(10.0)
-    Traceback (most recent call last):
-    ...
-    TypeError: size must be an integer
-
-Test str:
-    >>> print_square("foo")
-    Traceback (most recent call last):
-    ...
-    TypeError: size must be an integer
-
-Test none:
-    >>> print_square(None)
-    Traceback (most recent call last):
-    ...
-    TypeError: size must be an integer
-
-Test inf:
-    >>> print_square(float('inf'))
-    Traceback (most recent call last):
-    ...
-    TypeError: size must be an integer
-
-Test nan:
-    >>> print_square(float('nan'))
-    Traceback (most recent call last):
-    ...
-    TypeError: size must be an integer
-
-Missing one argument:
-    >>> print_square()
-    Traceback (most recent call last):
-    ...
-    TypeError: print_square() missing 1 required positional argument: 'size'
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/4-print_square.txt")
