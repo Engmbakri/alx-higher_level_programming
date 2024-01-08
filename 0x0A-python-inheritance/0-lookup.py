@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+''' Method for lookup method'''
 
-# function that returns the list of attributes and methods
+
 def lookup(obj):
-    attributes_methods = dir(obj)
+    '''function that returns the list of attributes and methods
+    Argus:
+    obj (object) : object to list
 
-    # filter any item start with '__'
-    filters = [item for item in attributes_methods if not startswith("__")]
-    return filters
+    Returns:
+    list: the list of attibutes
+    '''
+    return dir(obj)
